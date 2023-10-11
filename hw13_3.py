@@ -34,6 +34,8 @@ HW13_3
 Создать несколько объектов класса Person и Employee с разными данными
 и проверить, что исключения работают корректно при передаче неверных данных.
 """
+
+
 class InvalidNameError(Exception):
 
     def __init__(self, value):
@@ -57,6 +59,7 @@ class InvalidAgeError(Exception):
         elif self.value <= 0:
             return f'Invalid age: {self.value}. Age should be a positive integer.'
 
+
 class InvalidIdError(Exception):
 
     def __init__(self, value):
@@ -67,6 +70,7 @@ class InvalidIdError(Exception):
             return f'Invalid id: {self.value}. Id should be an integer.'
         elif not (100000 <= self.value <= 999999):
             return f'Invalid id: {self.value}. Id should be a 6-digit positive integer between 100000 and 999999.'
+
 
 class Person:
 
@@ -99,8 +103,10 @@ class Employee(Person):
         self._id = _id
 
     @property
-    def get_level (self):
+    def get_level(self):
         return self._id % 7
 
-person = Person("Alice", "Smith", "Johnson", 25)
-print(person.get_age())
+
+if __name__ == '__main__':
+    person = Person("Alice", "Smith", "Johnson", 25)
+    print(person.get_age())

@@ -73,5 +73,7 @@ class Archive:
     def __repr__(self):
         return f'Archive("{self.text}", {self.number})'
 
-invalid_archive_instance = Archive("Sample text", -5)
-print(invalid_archive_instance)
+
+if __name__ == '__main__':
+    invalid_archive_instance = Archive("Sample text", -5)
+    print(invalid_archive_instance)

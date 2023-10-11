@@ -59,5 +59,6 @@ class Rectangle:
         return Rectangle(width, height)
 
 
-r = Rectangle(4, 4)
-r.height = -3
+if __name__ == '__main__':
+    r = Rectangle(4, 4)
+    r.height = -3
